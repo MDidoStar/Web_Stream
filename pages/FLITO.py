@@ -26,7 +26,7 @@ st.set_page_config(page_title="FLITO: AI Traveling Blogger", page_icon="🌍", l
 @st.cache_data
 def load_data():
     try:
-        df = pd.read_csv('countries.csv')
+        df = pd.read_csv('pages/countries.csv')
         df['Country'] = df['Country'].astype(str)
         df['City'] = df['City'].astype(str)
         df['Currency_Code'] = df['Currency_Code'].astype(str)
