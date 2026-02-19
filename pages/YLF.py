@@ -1,7 +1,6 @@
 import streamlit as st
 from googleapiclient.discovery import build
 import google.generativeai as genai
-import os
 import re
 
 # API Keys
@@ -318,4 +317,5 @@ if st.button("▶  Find Videos", use_container_width=True):
             except Exception as e:
                 st.error(f"An error occurred: {str(e)}")
                 st.info("Make sure your API keys are valid and have the correct APIs enabled.")
+
 
