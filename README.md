@@ -24,7 +24,7 @@ Describe a video in plain English (e.g. *"a funny cat compilation"* or *"a deep-
 web_stream/
 ├── app.py                  # 🏠 Main landing page
 ├── pages/
-│   └── g.py               # 🎬 YouTube Link Finder
+│   └── YLF.py               # 🎬 YouTube Link Finder
 ├── requirements.txt        # Python dependencies
 └── README.md               # This file
 ```
@@ -48,7 +48,7 @@ pip install -r requirements.txt
 
 ### API Keys
 
-Open `pages/g.py` and replace the placeholder values at the top:
+Open `pages/YLF.py` and replace the placeholder values at the top:
 
 ```python
 YOUTUBE_API_KEY = "your-youtube-api-key"
