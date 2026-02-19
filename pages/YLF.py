@@ -5,8 +5,8 @@ import os
 import re
 
 # API Keys
-YOUTUBE_API_KEY = "AIzaSyBBLJgQJmeTJtNM5rQar0afnapTGtY3kM4"
-GEMINI_API_KEY = "AIzaSyCgzvuTNBBZaeZCnF2YCSQSjco_CtrnoT8"
+YOUTUBE_API_KEY = st.secrets["YOUTUBE_API_KEY"]
+GEMINI_API_KEY  = st.secrets["GEMINI_API_KEY"]
 
 # Configure Gemini
 genai.configure(api_key=GEMINI_API_KEY)
@@ -318,3 +318,4 @@ if st.button("▶  Find Videos", use_container_width=True):
             except Exception as e:
                 st.error(f"An error occurred: {str(e)}")
                 st.info("Make sure your API keys are valid and have the correct APIs enabled.")
+
