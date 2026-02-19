@@ -161,7 +161,7 @@ video_style = st.selectbox(
     index=0
 )
 
-shorts_max_seconds = None
+shorts_max_seconds = 180  # FIX: default value so it's never None
 if video_style == "Shorts":
     shorts_max_seconds = st.selectbox(
         "Shorts max length (filter)",
@@ -184,7 +184,8 @@ def enhance_description_with_gemini(user_desc: str, style: str) -> str:
         f"Include important keywords, topic synonyms, and context that YouTube's algorithm responds well to. "
         f"Output ONLY the improved search query — no explanation, no quotes, no extra text."
     )
-    model = genai.GenerativeModel("gemini-2.5-flash")
+    # FIX: use fully qualified model name
+    model = genai.GenerativeModel("gemini-2.5-flash-preview-04-17")
     response = model.generate_content(prompt)
     return response.text.strip()
 
@@ -222,7 +223,8 @@ def iso8601_to_seconds(duration: str) -> int:
 def fetch_durations_seconds(youtube, video_ids):
     if not video_ids:
         return {}
-    resp = youtube.videos().list(part="contentDetails", id=",".join(video_ids), maxResults=len(video_ids)).execute()
+    # FIX: removed invalid maxResults parameter from videos().list() with id filter
+    resp = youtube.videos().list(part="contentDetails", id=",".join(video_ids)).execute()
     return {v["id"]: iso8601_to_seconds(v["contentDetails"]["duration"]) for v in resp.get("items", [])}
 
 
@@ -281,7 +283,7 @@ if st.button("▶  Find Videos", use_container_width=True):
                 if video_style == "Shorts" and items:
                     video_ids = [it["id"]["videoId"] for it in items]
                     durations = fetch_durations_seconds(youtube, video_ids)
-                    items = [it for it in items if durations.get(it["id"]["videoId"], 999999) <= int(shorts_max_seconds)]
+                    items = [it for it in items if durations.get(it["id"]["videoId"], 999999) <= shorts_max_seconds]
 
                 if not items:
                     st.info("No videos found. Try a different description, style, or remove the channel filter.")
@@ -317,5 +319,3 @@ if st.button("▶  Find Videos", use_container_width=True):
             except Exception as e:
                 st.error(f"An error occurred: {str(e)}")
                 st.info("Make sure your API keys are valid and have the correct APIs enabled.")
-
-
