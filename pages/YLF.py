@@ -185,7 +185,7 @@ def enhance_description_with_gemini(user_desc: str, style: str) -> str:
         f"Output ONLY the improved search query — no explanation, no quotes, no extra text."
     )
     # FIX: use fully qualified model name
-    model = genai.GenerativeModel("gemini-2.5-flash-preview-04-17")
+    model = genai.GenerativeModel("gemini-2.5-flash")
     response = model.generate_content(prompt)
     return response.text.strip()
 
@@ -319,3 +319,4 @@ if st.button("▶  Find Videos", use_container_width=True):
             except Exception as e:
                 st.error(f"An error occurred: {str(e)}")
                 st.info("Make sure your API keys are valid and have the correct APIs enabled.")
+
