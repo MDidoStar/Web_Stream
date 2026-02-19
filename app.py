@@ -121,6 +121,37 @@ if st.button("Open YouTube Link Finder →", key="btn_yt"):
 
 st.markdown('<hr class="divider">', unsafe_allow_html=True)
 
+# App 2 — FLITO: AI Traveling Blogger
+st.markdown("""
+<div class="app-card">
+    <div class="app-card-title">🌍 FLITO: AI Traveling Blogger</div>
+    <div class="app-card-desc">
+        Your AI-powered travel companion. Find hotels, restaurants, tourist attractions, and transportation.
+        Plan your budget, convert currencies, translate languages, and build a premium day-by-day trip itinerary.
+    </div>
+</div>
+""", unsafe_allow_html=True)
+if st.button("Open FLITO →", key="btn_flito"):
+    st.switch_page("pages/FLITO.py")
+
+st.markdown('<hr class="divider">', unsafe_allow_html=True)
+
+# App 3 — Blink Smart
+st.markdown("""
+<div class="app-card">
+    <div class="app-card-title">👁️ Blink Smart: Eye Health Suite</div>
+    <div class="app-card-desc">
+        Monitor and analyse your eye health with AI. Capture webcam frames for a Gemini-powered blink pattern
+        analysis with a downloadable PDF report, or run a live 5-minute blink-rate monitor to prevent digital
+        eye strain.
+    </div>
+</div>
+""", unsafe_allow_html=True)
+if st.button("Open Blink Smart →", key="btn_blink"):
+    st.switch_page("pages/BlinkSmart.py")
+
+st.markdown('<hr class="divider">', unsafe_allow_html=True)
+
 # ── README section ────────────────────────────────────────────────────────────
 with st.expander("📖 About Web Stream — README"):
     st.markdown("""
@@ -135,15 +166,16 @@ Each app is self-contained, focused, and built to get things done fast.
 ## 🚀 Apps Included
 
 ### 🎬 YouTube Link Finder
-Describe a video in plain English (e.g. *"a funny cat compilation"* or
-*"a deep-dive tutorial on neural networks"*) and the app finds it for you.
+Describe a video in plain English and let Gemini + YouTube Data API find it for you.
+Filter by channel, video type (Shorts, Tutorial, Podcast, Review…), and length.
 
-**Features:**
-- ✨ Gemini 2.5 Flash AI rewrites your description into a YouTube-optimised search query
-- 🔍 YouTube Data API v3 returns the best matching videos
-- 📺 Filter by channel, video style (Shorts, Tutorial, Podcast, Review, etc.)
-- ⏱️ Shorts duration filtering (60 / 90 / 180 seconds max)
-- 🎛️ Choose how many results to return (1–10)
+### 🌍 FLITO: AI Traveling Blogger
+Hotels, restaurants, tourism, transport, shopping, budget tracking, currency conversion,
+translation, and a premium AI trip-builder — all in one place.
+
+### 👁️ Blink Smart: Eye Health Suite
+Capture 120 webcam frames for an AI blink-pattern analysis (with PDF report), or run
+a real-time 5-minute blink-rate monitor powered by MediaPipe Face Mesh.
 
 ---
 
@@ -151,105 +183,44 @@ Describe a video in plain English (e.g. *"a funny cat compilation"* or
 
 ```
 web_stream/
-├── app.py                  # 🏠 Main landing page (you are here)
+├── app.py                      # 🏠 Main landing page (you are here)
 ├── pages/
-│   └── YLF.py               # 🎬 YouTube Link Finder
-├── requirements.txt        # Python dependencies
-└── README.md               # This file
+│   ├── YLF.py                  # 🎬 YouTube Link Finder
+│   ├── FLITO.py                # 🌍 AI Traveling Blogger
+│   ├── BlinkSmart.py           # 👁️ Blink Smart hub
+│   ├── Blink_Analysis.py       # 📸 AI blink analysis + PDF
+│   └── Blink_Monitor.py        # ⏱️ Real-time blink monitor
+├── countries.csv               # Country / city / currency data
+├── requirements.txt            # Python dependencies
+└── README.md
 ```
 
 ---
 
-## ⚙️ Setup & Installation
-
-### Prerequisites
-- Python 3.8 or higher
-- A YouTube Data API v3 key
-- A Google Gemini API key
-
-### Installation
+## ⚙️ Setup
 
 ```bash
-git clone <your-repo-url>
-cd web_stream
 pip install -r requirements.txt
-```
-
-### API Keys
-
-Open `pages/YLF.py` and replace the placeholder values at the top:
-
-```python
-YOUTUBE_API_KEY = "your-youtube-api-key"
-GEMINI_API_KEY  = "your-gemini-api-key"
-```
-
-Or use Streamlit secrets — create `.streamlit/secrets.toml`:
-
-```toml
-YOUTUBE_API_KEY = "your-youtube-api-key"
-GEMINI_API_KEY  = "your-gemini-api-key"
-```
-
-### Running the App
-
-```bash
 streamlit run app.py
 ```
 
-The home page will open at `http://localhost:8501`.
+Add API keys to `.streamlit/secrets.toml`:
 
----
-
-## ☁️ Deploying to Streamlit Cloud
-
-1. Push the repo to GitHub
-2. Go to [share.streamlit.io](https://share.streamlit.io) and connect your repo
-3. Set `app.py` as the main file
-4. Add your API keys under **Secrets** in the Streamlit Cloud dashboard
-5. Deploy!
-
----
-
-## 📦 Dependencies
-
-| Package | Purpose |
-|---|---|
-| `streamlit` | Web framework |
-| `google-api-python-client` | YouTube Data API |
-| `google-generativeai` | Gemini AI |
-
-Install with:
-```bash
-pip install -r requirements.txt
+```toml
+YOUTUBE_API_KEY = "..."
+GEMINI_API_KEY  = "..."
 ```
 
 ---
 
 ## 🛠️ Adding a New App
 
-1. Create a new file inside `pages/` (e.g. `pages/my_app.py`)
-2. Add a card + button for it in `app.py`
-3. That's it — Streamlit automatically picks it up as a page
-
----
-
-## 📝 Notes
-
-- API keys are stored in the source files by default — move them to secrets before deploying publicly
-- The YouTube search API has a daily quota; each search costs ~100 units (10,000 units/day free)
-- Gemini enhancement is optional — you can skip it and search with your raw description
-
----
-
-## 🤝 Contributing
-
-Pull requests are welcome! If you build a cool single-purpose app that fits the Web Stream vibe,
-open a PR and it could be added to the collection.
+1. Create `pages/my_app.py`
+2. Add a card + button in `app.py`
+3. Done — Streamlit picks it up automatically.
 
 ---
 
 ## 📄 License
-
 MIT License — free to use, modify, and distribute.
     """)
