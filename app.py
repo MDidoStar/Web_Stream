@@ -117,7 +117,7 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 if st.button("Open YouTube Link Finder →", key="btn_yt"):
-    st.switch_page("pages/YLF.py")
+    st.switch_page("YLF.py")
 
 st.markdown('<hr class="divider">', unsafe_allow_html=True)
 
