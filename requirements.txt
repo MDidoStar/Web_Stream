@@ -1,6 +1,9 @@
+# Web Framework
 streamlit>=1.31.0
-google-api-python-client
+
+# Google AI & APIs
 google-generativeai
+google-api-python-client
 
 # FLITO: Maps & Location
 folium
@@ -16,18 +19,16 @@ SpeechRecognition
 # FLITO + Blink Analysis: PDF Generation
 reportlab
 
-# FLITO + Blink Analysis: Data
+# Data
 pandas
 
 # Blink Smart: Computer Vision
-opencv-python-headless==4.10.0.84
-mediapipe==0.10.14
-protobuf<5
-
-# Blink Smart: WebRTC (optional, for streamlit-webrtc if needed)
-streamlit-webrtc==0.48.1
-av
+# opencv and mediapipe must be compatible — let pip resolve versions
+opencv-python-headless
+mediapipe
+protobuf>=3.20,<5
 
 # Utilities
 Pillow
-numpy==1.26.4
+numpy<2
+av
