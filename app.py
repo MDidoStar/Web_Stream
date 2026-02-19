@@ -117,7 +117,7 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 if st.button("Open YouTube Link Finder →", key="btn_yt"):
-    st.switch_page("pages/g.py")
+    st.switch_page("pages/YLF.py")
 
 st.markdown('<hr class="divider">', unsafe_allow_html=True)
 
@@ -153,7 +153,7 @@ Describe a video in plain English (e.g. *"a funny cat compilation"* or
 web_stream/
 ├── app.py                  # 🏠 Main landing page (you are here)
 ├── pages/
-│   └── g.py               # 🎬 YouTube Link Finder
+│   └── YLF.py               # 🎬 YouTube Link Finder
 ├── requirements.txt        # Python dependencies
 └── README.md               # This file
 ```
@@ -177,7 +177,7 @@ pip install -r requirements.txt
 
 ### API Keys
 
-Open `pages/g.py` and replace the placeholder values at the top:
+Open `pages/YLF.py` and replace the placeholder values at the top:
 
 ```python
 YOUTUBE_API_KEY = "your-youtube-api-key"
