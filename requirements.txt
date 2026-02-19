@@ -1,3 +1,33 @@
 streamlit>=1.31.0
 google-api-python-client
 google-generativeai
+
+# FLITO: Maps & Location
+folium
+streamlit-folium
+geopy
+
+# FLITO: Currency
+requests
+
+# FLITO: Voice Input
+SpeechRecognition
+
+# FLITO + Blink Analysis: PDF Generation
+reportlab
+
+# FLITO + Blink Analysis: Data
+pandas
+
+# Blink Smart: Computer Vision
+opencv-python-headless==4.10.0.84
+mediapipe==0.10.14
+protobuf<5
+
+# Blink Smart: WebRTC (optional, for streamlit-webrtc if needed)
+streamlit-webrtc==0.48.1
+av
+
+# Utilities
+Pillow
+numpy==1.26.4
