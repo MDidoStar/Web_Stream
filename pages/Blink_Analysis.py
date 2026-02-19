@@ -38,7 +38,7 @@ st.set_page_config(
 @st.cache_data
 def load_data():
     try:
-        df = pd.read_csv("countries.csv")
+        df = pd.read_csv("pages/countries.csv")
         expected = {"Country", "City"}
         missing = expected - set(df.columns)
         if missing:
