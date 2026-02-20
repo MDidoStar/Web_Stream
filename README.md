@@ -54,6 +54,17 @@ Monitor and analyse your eye health with AI. Two tools in one:
 
 ---
 
+### 📧 Gmail Sender
+Send emails directly from the browser using Gmail SMTP. Enter your Gmail address, compose your message, and hit send — a confirmation copy is delivered to your inbox.
+
+**Features:**
+- ✉️ Send plain text or HTML-formatted emails
+- 📬 Confirmation copy sent to the recipient's address
+- 🔐 Credentials stored securely in Streamlit secrets (never committed to version control)
+- 🎨 Clean, minimal interface matching the Web Stream design language
+
+---
+
 ## 🗂️ Project Structure
 
 ```
@@ -64,7 +75,8 @@ web_stream/
 │   ├── FLITO.py                # 🌍 AI Traveling Blogger
 │   ├── BlinkSmart.py           # 👁️ Blink Smart hub
 │   ├── Blink_Analysis.py       # 📸 AI blink analysis + PDF report
-│   └── Blink_Monitor.py        # ⏱️ Real-time blink monitor
+│   ├── Blink_Monitor.py        # ⏱️ Real-time blink monitor
+│   └── GmailSender.py          # 📧 Gmail Sender
 ├── countries.csv               # Country / city / currency data
 ├── requirements.txt            # Python dependencies
 ├── packages.txt                # System dependencies
@@ -80,6 +92,7 @@ web_stream/
 - Python 3.10 or higher
 - A YouTube Data API v3 key
 - A Google Gemini API key
+- A Gmail account with an App Password (for Gmail Sender)
 
 ### Installation
 
@@ -96,6 +109,8 @@ Create `.streamlit/secrets.toml`:
 ```toml
 YOUTUBE_API_KEY = "your-youtube-api-key"
 GEMINI_API_KEY  = "your-gemini-api-key"
+GMAIL_SENDER       = "your-gmail-address@gmail.com"
+GMAIL_APP_PASSWORD = "your-gmail-app-password"
 ```
 
 ### Running the App
@@ -155,9 +170,10 @@ All apps are accessible from the **Web Stream home page** (`app.py`). Each app h
 app.py (Web Stream Home)
 ├── pages/YLF.py
 ├── pages/FLITO.py
-└── pages/BlinkSmart.py
-    ├── pages/Blink_Analysis.py
-    └── pages/Blink_Monitor.py
+├── pages/BlinkSmart.py
+│   ├── pages/Blink_Analysis.py
+│   └── pages/Blink_Monitor.py
+└── pages/GmailSender.py
 ```
 
 ---
@@ -182,6 +198,7 @@ app.py (Web Stream Home)
 - Gemini AI enhancement is optional in the YouTube Link Finder — you can search with your raw description
 - The FLITO Trip Builder is behind a premium code (`5555`) — change this in `pages/FLITO.py` to suit your needs
 - Blink Smart requires camera permissions; some browsers may block camera access inside iframes
+- Gmail Sender requires a Gmail App Password — enable 2FA on your Google account and generate one at [myaccount.google.com/apppasswords](https://myaccount.google.com/apppasswords)
 
 ---
 
