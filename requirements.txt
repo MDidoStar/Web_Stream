@@ -1,9 +1,14 @@
+
+
+
 # Web Framework
 streamlit>=1.38.0
 
 # Google AI & APIs
 google-generativeai
 google-api-python-client
+google-auth
+google-auth-httplib2
 
 # FLITO: Maps & Location
 folium>=0.14.0
@@ -26,6 +31,7 @@ pandas>=1.5.0
 opencv-python-headless>=4.8.0
 mediapipe>=0.10.0
 protobuf>=3.20,<5
+
 
 # Utilities
 Pillow>=9.0.0
