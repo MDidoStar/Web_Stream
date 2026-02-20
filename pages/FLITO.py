@@ -215,7 +215,7 @@ with st.sidebar:
     #st.link_button('Subscribe now!', 'https://buy.stripe.com/test_3cIcN592b5iLfN93mU8so00')
 
 # --- Tabs ---
-map_tab, hotels_tab, food_tab, touristic_tab, transpotation_tab, shopping_tab, budget_tab, currency_tab, translate_tab, trip_builder_tab, extra_tab = st.tabs([
+map_tab, hotels_tab, food_tab, touristic_tab, transpotation_tab, shopping_tab, budget_tab, currency_tab, translate_tab, trip_builder_tab = st.tabs([
     "🗺️ Map", "🏨 Hotels", "🍝 Food", "🏝️ Tourism", "🚗 Transportation", "🛍️ Shopping",
     "💰 Budget", "💱 Currency", "🗣️ Translation", "✈️ Trip Builder (Premium)"])
 
