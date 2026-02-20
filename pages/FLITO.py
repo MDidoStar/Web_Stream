@@ -211,8 +211,8 @@ with st.sidebar:
     if st.button('Send your Feedback', key='feedback'):
         st.write("Thanks For Your FeedBack!")
     st.divider()
-    st.subheader('Would you like to go Premium?')
-    st.link_button('Subscribe now!', 'https://buy.stripe.com/test_3cIcN592b5iLfN93mU8so00')
+    #st.subheader('Would you like to go Premium?')
+    #st.link_button('Subscribe now!', 'https://buy.stripe.com/test_3cIcN592b5iLfN93mU8so00')
 
 # --- Tabs ---
 map_tab, hotels_tab, food_tab, touristic_tab, transpotation_tab, shopping_tab, budget_tab, currency_tab, translate_tab, trip_builder_tab, extra_tab = st.tabs([
