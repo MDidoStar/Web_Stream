@@ -152,6 +152,21 @@ if st.button("Open Blink Smart →", key="btn_blink"):
 
 st.markdown('<hr class="divider">', unsafe_allow_html=True)
 
+# App 4 — Gmail Sender
+st.markdown("""
+<div class="app-card">
+    <div class="app-card-title">📧 Gmail Sender</div>
+    <div class="app-card-desc">
+        Send emails instantly via the Gmail API. Enter your Gmail address and compose your message —
+        supports both plain text and HTML formatting. Powered by Google Service Account.
+    </div>
+</div>
+""", unsafe_allow_html=True)
+if st.button("Open Gmail Sender →", key="btn_gmail"):
+    st.switch_page("pages/GmailSender.py")
+
+st.markdown('<hr class="divider">', unsafe_allow_html=True)
+
 # ── README section ────────────────────────────────────────────────────────────
 with st.expander("📖 About Web Stream — README"):
     st.markdown("""
@@ -177,6 +192,10 @@ translation, and a premium AI trip-builder — all in one place.
 Capture 120 webcam frames for an AI blink-pattern analysis (with PDF report), or run
 a real-time 5-minute blink-rate monitor powered by MediaPipe Face Mesh.
 
+### 📧 Gmail Sender
+Send plain-text or HTML emails via the Gmail API using a Google Service Account.
+Enter your Gmail address, your message, and hit send — that's it.
+
 ---
 
 ## 🗂️ Project Structure
@@ -189,7 +208,8 @@ web_stream/
 │   ├── FLITO.py                # 🌍 AI Traveling Blogger
 │   ├── BlinkSmart.py           # 👁️ Blink Smart hub
 │   ├── Blink_Analysis.py       # 📸 AI blink analysis + PDF
-│   └── Blink_Monitor.py        # ⏱️ Real-time blink monitor
+│   ├── Blink_Monitor.py        # ⏱️ Real-time blink monitor
+│   └── GmailSender.py          # 📧 Gmail Sender
 ├── countries.csv               # Country / city / currency data
 ├── requirements.txt            # Python dependencies
 └── README.md
@@ -209,6 +229,19 @@ Add API keys to `.streamlit/secrets.toml`:
 ```toml
 YOUTUBE_API_KEY = "..."
 GEMINI_API_KEY  = "..."
+
+[GMAIL_SERVICE_ACCOUNT]
+type = "service_account"
+project_id = "your-project-id"
+private_key_id = "..."
+private_key = "-----BEGIN PRIVATE KEY-----\\n...\\n-----END PRIVATE KEY-----\\n"
+client_email = "your-sa@your-project.iam.gserviceaccount.com"
+client_id = "..."
+auth_uri = "https://accounts.google.com/o/oauth2/auth"
+token_uri = "https://oauth2.googleapis.com/token"
+auth_provider_x509_cert_url = "https://www.googleapis.com/oauth2/v1/certs"
+client_x509_cert_url = "..."
+universe_domain = "googleapis.com"
 ```
 
 ---
