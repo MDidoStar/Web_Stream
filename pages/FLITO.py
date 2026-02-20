@@ -207,10 +207,10 @@ with st.sidebar:
     st.divider()
     st.write('Rate us (out of 5):')
     rating = st.feedback('stars', key="trip_rating")
-    feedback = st.text_input("Any suggestions for improvement?")
-    if st.button('Send your Feedback', key='feedback'):
-        st.write("Thanks For Your FeedBack!")
-    st.divider()
+    #feedback = st.text_input("Any suggestions for improvement?")
+    #if st.button('Send your Feedback', key='feedback'):
+    #    st.write("Thanks For Your FeedBack!")
+    #st.divider()
     #st.subheader('Would you like to go Premium?')
     #st.link_button('Subscribe now!', 'https://buy.stripe.com/test_3cIcN592b5iLfN93mU8so00')
 
