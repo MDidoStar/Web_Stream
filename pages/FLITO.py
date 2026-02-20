@@ -217,8 +217,7 @@ with st.sidebar:
 # --- Tabs ---
 map_tab, hotels_tab, food_tab, touristic_tab, transpotation_tab, shopping_tab, budget_tab, currency_tab, translate_tab, trip_builder_tab, extra_tab = st.tabs([
     "🗺️ Map", "🏨 Hotels", "🍝 Food", "🏝️ Tourism", "🚗 Transportation", "🛍️ Shopping",
-    "💰 Budget", "💱 Currency", "🗣️ Translation", "✈️ Trip Builder (Premium)", "LINKS"
-])
+    "💰 Budget", "💱 Currency", "🗣️ Translation", "✈️ Trip Builder (Premium)"])
 
 countries_list = get_countries()
 
@@ -654,8 +653,8 @@ Make the response brief for each day, keep it simple and very readable."""
     else:
         st.error("Enter the code first to access premium trip builder!")
 
-with extra_tab:
-    st.link_button('Youtube', 'https://youtube.com')
+#with extra_tab:
+#    st.link_button('Youtube', 'https://youtube.com')
 
 st.write('---')
 st.caption('🌟 AI-powered recommendations using Google Gemini | Currency data from ExchangeRate-API')
