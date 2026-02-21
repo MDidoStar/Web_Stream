@@ -164,15 +164,15 @@ st.markdown('<hr class="divider">', unsafe_allow_html=True)
 # App 4 — Gmail Sender
 st.markdown("""
 <div class="app-card">
-    <div class="app-card-title">📧 Gmail Sender</div>
+    <div class="app-card-title">📧 Contact Us</div>
     <div class="app-card-desc">
         Send emails instantly via the Gmail API. Enter your Gmail address and compose your message —
         supports both plain text and HTML formatting. Powered by Google Service Account.
     </div>
 </div>
 """, unsafe_allow_html=True)
-if st.button("Open Gmail Sender →", key="btn_gmail"):
-    st.switch_page("pages/GmailSender.py")
+if st.button("Open Contact Us →", key="btn_gmail"):
+    st.switch_page("pages/Contact_Us.py")
 
 st.markdown('<hr class="divider">', unsafe_allow_html=True)
 
@@ -218,7 +218,7 @@ web_stream/
 │   ├── BlinkSmart.py           # 👁️ Blink Smart hub
 │   ├── Blink_Analysis.py       # 📸 AI blink analysis + PDF
 │   ├── Blink_Monitor.py        # ⏱️ Real-time blink monitor
-│   └── GmailSender.py          # 📧 Gmail Sender
+│   └── Contact_US.py          # 📧 Contact us using Gmail
 ├── countries.csv               # Country / city / currency data
 ├── requirements.txt            # Python dependencies
 └── README.md
