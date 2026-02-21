@@ -29,7 +29,15 @@ st.markdown("""
             text-align: center;
             color: #666666;
             font-size: 1.1rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .hero-partners {
+            text-align: center;
+            color: #999999;
+            font-size: 0.88rem;
             margin-bottom: 2.5rem;
+            letter-spacing: 0.3px;
         }
 
         .divider {
@@ -101,6 +109,7 @@ st.markdown("""
 # ── Header ────────────────────────────────────────────────────────────────────
 st.markdown('<div class="hero-title">🌐 Web Stream</div>', unsafe_allow_html=True)
 st.markdown('<div class="hero-subtitle">A collection of AI-powered web apps — pick one and dive in.</div>', unsafe_allow_html=True)
+st.markdown('<div class="hero-partners">Partners: Aly Eldin &nbsp;·&nbsp; Mostafa Mohamed &nbsp;·&nbsp; Talia Mohamed &nbsp;·&nbsp; Omar Adel &nbsp;·&nbsp; Omar Ammar &nbsp;·&nbsp; Coach Hazem Mohamed</div>', unsafe_allow_html=True)
 st.markdown('<hr class="divider">', unsafe_allow_html=True)
 st.markdown('<div class="section-label">Available Apps</div>', unsafe_allow_html=True)
 
