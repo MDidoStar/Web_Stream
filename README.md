@@ -54,7 +54,7 @@ Monitor and analyse your eye health with AI. Two tools in one:
 
 ---
 
-### 📧 Gmail Sender
+### 📧 Contact Us
 Send emails directly from the browser using Gmail SMTP. Enter your Gmail address, compose your message, and hit send — a confirmation copy is delivered to your inbox.
 
 **Features:**
@@ -76,7 +76,7 @@ web_stream/
 │   ├── BlinkSmart.py           # 👁️ Blink Smart hub
 │   ├── Blink_Analysis.py       # 📸 AI blink analysis + PDF report
 │   ├── Blink_Monitor.py        # ⏱️ Real-time blink monitor
-│   └── GmailSender.py          # 📧 Gmail Sender
+│   └── Contact_Us.py          # 📧 Contact Us via Gmail
 ├── countries.csv               # Country / city / currency data
 ├── requirements.txt            # Python dependencies
 ├── packages.txt                # System dependencies
@@ -101,37 +101,6 @@ git clone <your-repo-url>
 cd web_stream
 pip install -r requirements.txt
 ```
-
-### API Keys
-
-Create `.streamlit/secrets.toml`:
-
-```toml
-YOUTUBE_API_KEY = "your-youtube-api-key"
-GEMINI_API_KEY  = "your-gemini-api-key"
-GMAIL_SENDER       = "your-gmail-address@gmail.com"
-GMAIL_APP_PASSWORD = "your-gmail-app-password"
-```
-
-### Running the App
-
-```bash
-streamlit run app.py
-```
-
-The home page will open at `http://localhost:8501`.
-
----
-
-## ☁️ Deploying to Streamlit Cloud
-
-1. Push the repo to GitHub
-2. Go to [share.streamlit.io](https://share.streamlit.io) and connect your repo
-3. Set `app.py` as the main file
-4. Add your API keys under **Secrets** in the Streamlit Cloud dashboard
-5. Deploy!
-
----
 
 ## 📦 Dependencies
 
@@ -173,30 +142,18 @@ app.py (Web Stream Home)
 ├── pages/BlinkSmart.py
 │   ├── pages/Blink_Analysis.py
 │   └── pages/Blink_Monitor.py
-└── pages/GmailSender.py
+└── pages/Contact_Us.py
 ```
 
 ---
 
-## 🛠️ Adding a New App
-
-1. Create a new file inside `pages/` (e.g. `pages/my_app.py`)
-2. Add a card + button for it in `app.py`
-3. Add a `← Back to Web Stream` button at the top of your new page:
-   ```python
-   if st.button("← Back to Web Stream"):
-       st.switch_page("app.py")
-   ```
-4. That's it — Streamlit automatically picks it up as a page
-
----
 
 ## 📝 Notes
 
 - API keys are stored in Streamlit secrets — never commit them to version control
 - The YouTube search API has a daily quota; each search costs ~100 units (10,000 units/day free tier)
 - Gemini AI enhancement is optional in the YouTube Link Finder — you can search with your raw description
-- The FLITO Trip Builder is behind a premium code (`5555`) — change this in `pages/FLITO.py` to suit your needs
+- The FLITO Trip Builder is behind a premium code (I will say it later) — change this in `pages/FLITO.py` to suit your needs
 - Blink Smart requires camera permissions; some browsers may block camera access inside iframes
 - Gmail Sender requires a Gmail App Password — enable 2FA on your Google account and generate one at [myaccount.google.com/apppasswords](https://myaccount.google.com/apppasswords)
 
@@ -204,7 +161,7 @@ app.py (Web Stream Home)
 
 ## 🤝 Contributing
 
-Pull requests are welcome! If you build a cool single-purpose app that fits the Web Stream vibe, open a PR and it could be added to the collection.
+Pull requests are welcome! If you build a cool single-purpose app that fits the Web Stream vibe, open the contact us and it could be added to the collection.
 
 ---
 
