@@ -7,7 +7,7 @@ from email.mime.multipart import MIMEMultipart
 # Page Config
 # ---------------------------
 st.set_page_config(
-    page_title="Send me apps you want",
+    page_title="Contact Us",
     page_icon="📧",
     layout="centered"
 )
